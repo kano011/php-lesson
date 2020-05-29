@@ -1,0 +1,111 @@
+-- phpMyAdmin SQL Dump
+-- version 4.9.3
+-- https://www.phpmyadmin.net/
+--
+-- ホスト: localhost:8889
+-- 生成日時: 2020 年 5 月 29 日 03:14
+-- サーバのバージョン： 5.7.26
+-- PHP のバージョン: 7.4.2
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- データベース: `mydb`
+--
+CREATE DATABASE IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `mydb`;
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `homework01_table`
+--
+
+CREATE TABLE `homework01_table` (
+  `id` int(12) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `lid` varchar(64) NOT NULL,
+  `lpw` varchar(64) NOT NULL,
+  `kanri_flg` int(1) NOT NULL,
+  `life_flg` int(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- テーブルのデータのダンプ `homework01_table`
+--
+
+INSERT INTO `homework01_table` (`id`, `name`, `lid`, `lpw`, `kanri_flg`, `life_flg`) VALUES
+(1, 'Yamada', 'text1', 'text2', 0, 1),
+(2, 'Suzuki', 'test3', 'test4', 0, 1),
+(3, 'Ohtemachi', 'text5', 'text7', 1, 1),
+(4, 'Shibuya', 'test3', 'test4', 1, 1),
+(5, 'Chiba', 'text1', 'text2', 0, 1),
+(6, 'Ishikawa', 'test5', 'test7', 0, 1),
+(7, 'Suzuki', 'test11', 'test12', 0, 0),
+(8, 'Ohtemachi', 'text13', 'text14', 1, 0),
+(9, 'Chiba', 'text15', 'text16', 0, 0),
+(10, 'Suzuki', 'test17', 'test18', 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- テーブルの構造 `lesson01_db`
+--
+
+CREATE TABLE `lesson01_db` (
+  `id` int(12) NOT NULL,
+  `name` varchar(64) NOT NULL,
+  `email` varchar(256) NOT NULL,
+  `age` int(3) NOT NULL,
+  `naiyou` text NOT NULL,
+  `indate` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='phpDataBaseLessons';
+
+--
+-- テーブルのデータのダンプ `lesson01_db`
+--
+
+INSERT INTO `lesson01_db` (`id`, `name`, `email`, `age`, `naiyou`, `indate`) VALUES
+(1, 'test1', 'test1@test.jp', 30, 'test', '2020-05-29 11:31:25'),
+(2, 'test2', 'test2@test.jp', 40, 'test', '2020-05-29 11:31:47'),
+(3, 'test3', 'test3@test.jp', 20, 'test', '2020-05-29 11:31:47'),
+(4, 'test4', 'test4@test.jp', 30, 'test', '2020-05-29 11:35:44'),
+(5, 'test5', 'test5@test.jp', 33, 'test', '2020-05-29 11:35:44'),
+(6, 'test6', 'test6@test.jp', 24, 'test', '2020-05-29 11:35:44'),
+(7, 'test7', 'test7@test.jp', 47, 'test', '2020-05-29 11:35:44'),
+(8, 'test8', 'test8@test.jp', 71, 'test', '2020-05-29 11:35:44'),
+(9, 'test9', 'test9@test.jp', 19, 'test', '2020-05-29 11:35:44'),
+(10, 'test10', 'test10@test.jp', 14, 'test', '2020-05-29 11:35:44');
+
+--
+-- ダンプしたテーブルのインデックス
+--
+
+--
+-- テーブルのインデックス `homework01_table`
+--
+ALTER TABLE `homework01_table`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- テーブルのインデックス `lesson01_db`
+--
+ALTER TABLE `lesson01_db`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- ダンプしたテーブルのAUTO_INCREMENT
+--
+
+--
+-- テーブルのAUTO_INCREMENT `homework01_table`
+--
+ALTER TABLE `homework01_table`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- テーブルのAUTO_INCREMENT `lesson01_db`
+--
+ALTER TABLE `lesson01_db`
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
