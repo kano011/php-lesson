@@ -1,7 +1,7 @@
 <?php
 //1.  DB接続します
 try {
-    //dbname=gs_db
+    //dbname=mydb
     //host=localhsot
     //Password:MAMP='root',XAMPP=''
     $pdo = new PDO('mysql:dbname=mydb;charset=utf8;host=localhost','root','root');

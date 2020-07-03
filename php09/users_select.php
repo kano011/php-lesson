@@ -10,6 +10,7 @@ try {
 }
 
 //２．テーブル名"hw01_table"のSQLを作成
+//課題：ソート降順/5レコードのみ取得
 $sql = "SELECT * FROM hw01_table ORDER BY id DESC";
 $stmt = $pdo->prepare($sql);
 $status = $stmt->execute();
@@ -24,8 +25,15 @@ if($status==false) {
     //Selectデータで取得したレコードの数だけ自動でループする
     while( $res = $stmt->fetch(PDO::FETCH_ASSOC)){
         $view .= '<tr>';
-        $view .= '<td>'.$res["id"].'</td>';
-        $view .= '<td><a href="users_detail.php?id='.$res["id"].'">'.$res["name"].'</a></td>';
+        $view .= '<td>';
+        
+        //削除へのリンク作成
+        $view .= '<a href="users_delete.php?id='.$res["id"].'">';
+        $view .= '削除';
+        $view .= '</a>';
+        
+        $view .= '</td>';
+        $view .= '<td>'.$res["name"].'</td>';
         $view .= '<td>'.$res["lid"].'</td>';
         $view .= '<td>'.$res["lpw"].'</td>';
         $view .= '<td>'.$res["kanri_flg"].'</td>';

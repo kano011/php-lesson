@@ -6,7 +6,7 @@
 $id = $_GET["id"];
 //1.  DB接続します
 try {
-  //dbname=gs_db
+  //dbname=mydb
   //host=localhost
   //Password:MAMP='root', XAMPP=''
   $pdo = new PDO('mysql:dbname=mydb;charset=utf8;host=localhost','root','root');
@@ -14,7 +14,7 @@ try {
   exit('DB Error'.$e->getMessage());
 }
 
-//２．テーブル名"gs_user_table"のSQLを作成
+//２．テーブル名"hw01_table"のSQLを作成
 //課題：ソート降順/5レコードのみ取得
 $sql = "SELECT * FROM hw01_table WHERE id=:id";
 $stmt = $pdo->prepare($sql);
